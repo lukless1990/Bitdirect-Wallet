@@ -1,6 +1,8 @@
 Compile instructions for Windows, Linux, Mac.
 
-Need qt5, boost.
+Need qt5, boost, cmake.
+
+Windows users can use Visual Studios.
 
 **1. Clone wallet sources**
 
@@ -8,7 +10,7 @@ Need qt5, boost.
 git clone https://github.com/crypto-king/Bitdirect-Wallet.git
 ```
 
-**4. Build**
+**2. Build**
 
 ```
 mkdir build && cd build && cmake .. && make
