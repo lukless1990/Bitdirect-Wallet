@@ -8,7 +8,10 @@ Window users can use Visual Studios.
 
 ```
 git clone https://github.com/crypto-king/Bitdirect-Wallet.git
+
+cd Bitdirect-Wallet
 ```
+
 
 **2. Build**
 
