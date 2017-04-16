@@ -2,7 +2,7 @@ Compile instructions for Windows, Linux, Mac.
 
 Need qt5, boost, cmake.
 
-Windows users can use Visual Studios.
+Window users can use Visual Studios.
 
 **1. Clone wallet sources**
 
