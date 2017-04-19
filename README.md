@@ -1,6 +1,15 @@
 Fork of the Crypto-King Bitdirect-Wallet!
 
 
+Changed the files... 
+
+1) src/CryptoNoteWrapper.cpp 
+
+2) cryptonote/src/Wallet/LegacyKeysImporter.cpp
+
+3) cryptonote/src/WalletLegacy/WalletLegacySerializer.cpp
+
+
 Compile instructions for Linux!
 
 
