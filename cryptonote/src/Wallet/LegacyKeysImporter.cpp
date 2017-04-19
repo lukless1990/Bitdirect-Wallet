@@ -71,8 +71,8 @@ void loadKeysFromFile(const std::string& filename, const std::string& password, 
   }
 
   const CryptoNote::AccountKeys& keys = account.getAccountKeys();
-  CryptoNote::throwIfKeysMissmatch(keys.viewSecretKey, keys.address.viewPublicKey);
-  CryptoNote::throwIfKeysMissmatch(keys.spendSecretKey, keys.address.spendPublicKey);
+  //CryptoNote::throwIfKeysMissmatch(keys.viewSecretKey, keys.address.viewPublicKey);
+  //CryptoNote::throwIfKeysMissmatch(keys.spendSecretKey, keys.address.spendPublicKey);
 }
 
 }
