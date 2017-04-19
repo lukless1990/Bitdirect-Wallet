@@ -15,6 +15,10 @@ Compile instructions for Linux!
 
 
 ```
+sudo add-apt-repository universe
+
+sudo apt-get update
+
 sudo apt-get install build-essential git cmake libboost-all-dev
 
 sudo apt-get install qtbase5-dev
