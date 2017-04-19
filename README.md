@@ -13,10 +13,12 @@ Changed the files...
 Compile instructions for Linux!
 
 
+
+```
 sudo apt-get install build-essential git cmake libboost-all-dev
 
 sudo apt-get install qtbase5-dev
-
+```
 
 **1. Clone wallet sources**
 
