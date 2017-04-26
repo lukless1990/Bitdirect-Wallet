@@ -47,6 +47,12 @@ struct keys_file_data {
   }
 };
 
+bool verify_keys(const SecretKey& sec, const PublicKey& expected_pub) {
+  PublicKey pub;
+  bool r = secret_key_to_public_key(sec, pub);
+  return r && expected_pub == pub;
+}
+
 void loadKeysFromFile(const std::string& filename, const std::string& password, CryptoNote::AccountBase& account) {
   keys_file_data keys_file_data;
   std::string buf;
@@ -66,13 +72,15 @@ void loadKeysFromFile(const std::string& filename, const std::string& password, 
   account_data.resize(keys_file_data.account_data.size());
   chacha8(keys_file_data.account_data.data(), keys_file_data.account_data.size(), key, keys_file_data.iv, &account_data[0]);
 
-  if (!CryptoNote::loadFromBinaryKeyValue(account, account_data)) {
-    throw std::system_error(make_error_code(CryptoNote::error::WRONG_PASSWORD));
+  const CryptoNote::AccountKeys& keys = account.getAccountKeys();
+
+  if (CryptoNote::loadFromBinaryKeyValue(account, account_data) &&
+      verify_keys(keys.viewSecretKey, keys.address.viewPublicKey) &&
+      verify_keys(keys.spendSecretKey, keys.address.spendPublicKey)) {
+    return;
   }
 
-  const CryptoNote::AccountKeys& keys = account.getAccountKeys();
-  //CryptoNote::throwIfKeysMissmatch(keys.viewSecretKey, keys.address.viewPublicKey);
-  //CryptoNote::throwIfKeysMissmatch(keys.spendSecretKey, keys.address.spendPublicKey);
+  throw std::system_error(make_error_code(CryptoNote::error::WRONG_PASSWORD));
 }
 
 }
