@@ -5,6 +5,7 @@
 #include "CurrencyAdapter.h"
 #include "CryptoNoteWalletConfig.h"
 #include "LoggerAdapter.h"
+#include "Settings.h"
 
 namespace WalletGui {
 

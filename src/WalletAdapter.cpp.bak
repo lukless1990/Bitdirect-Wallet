@@ -236,7 +236,7 @@ bool WalletAdapter::getTransfer(CryptoNote::TransferId& _id, CryptoNote::WalletL
   return false;
 }
 
-
+void WalletAdapter::sendTransaction(const QVector<CryptoNote::WalletLegacyTransfer>& _transfers, quint64 _fee, const QString& _paymentId, quint64 _mixin) {
 bool WalletAdapter::getAccountKeys(CryptoNote::AccountKeys& _keys) {
   Q_CHECK_PTR(m_wallet);
   try {
@@ -247,7 +247,6 @@ bool WalletAdapter::getAccountKeys(CryptoNote::AccountKeys& _keys) {
 
   return false;
 }
-void WalletAdapter::sendTransaction(const QVector<CryptoNote::WalletLegacyTransfer>& _transfers, quint64 _fee, const QString& _paymentId, quint64 _mixin) {
   Q_CHECK_PTR(m_wallet);
   try {
     lock();

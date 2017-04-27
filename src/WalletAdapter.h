@@ -23,6 +23,7 @@ public:
   static WalletAdapter& instance();
 
   void open(const QString& _password);
+  void createWithKeys(const CryptoNote::AccountKeys& _keys);
   void close();
   bool save(bool _details, bool _cache);
   void backup(const QString& _file);
@@ -34,6 +35,7 @@ public:
   quint64 getTransferCount() const;
   bool getTransaction(CryptoNote::TransactionId& _id, CryptoNote::WalletLegacyTransaction& _transaction);
   bool getTransfer(CryptoNote::TransferId& _id, CryptoNote::WalletLegacyTransfer& _transfer);
+  bool getAccountKeys(CryptoNote::AccountKeys& _keys);
   bool isOpen() const;
   void sendTransaction(const QVector<CryptoNote::WalletLegacyTransfer>& _transfers, quint64 _fee, const QString& _payment_id, quint64 _mixin);
   bool changePassword(const QString& _old_pass, const QString& _new_pass);
@@ -77,7 +79,7 @@ private:
   Q_SLOT void updateBlockStatusTextWithDelay();
 
 Q_SIGNALS:
-  void walletInitCompletedSignal(int _error, const QString& _error_text);
+  void walletInitCompletedSignal(int _error, const QString& _errorText);
   void walletCloseCompletedSignal();
   void walletSaveCompletedSignal(int _error, const QString& _error_text);
   void walletSynchronizationProgressUpdatedSignal(quint64 _current, quint64 _total);
