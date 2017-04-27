@@ -2,3 +2,4 @@
 set(CN_PROJECT_NAME "bitdirect")
 set(CN_CURRENCY_DISPLAY_NAME "BITDirect")
 set(CN_CURRENCY_TICKER "BITD")
+set(CN_VERSION 0.0.1)
