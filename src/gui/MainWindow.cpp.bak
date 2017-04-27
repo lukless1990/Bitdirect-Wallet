@@ -16,7 +16,7 @@
 #include "ChangePasswordDialog.h"
 #include "CurrencyAdapter.h"
 #include "ExitWidget.h"
-#include "ImportKeyDialog.h"
+
 #include "MainWindow.h"
 #include "NewPasswordDialog.h"
 #include "NodeAdapter.h"

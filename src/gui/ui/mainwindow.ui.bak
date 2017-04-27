@@ -337,7 +337,11 @@
     <string>Close to tray</string>
    </property>
   </action>
-
+  <action name="m_importKeyAction">
+   <property name="text">
+    <string>Import private key</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
